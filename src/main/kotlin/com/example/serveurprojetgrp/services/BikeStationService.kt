@@ -9,7 +9,7 @@ class BikeStationService(val bikeStationRep: BikeStationRepository) {
 
     fun getAll() = bikeStationRep.findAll()
 
-    fun saveAll() = bikeStationRep.saveAll(RequestUtils.loadBikeStations().map { it.toEntity() })
+    fun saveAll() = bikeStationRep.saveAll(RequestUtils.loadBikeStations())
 
     fun deleteAll() = bikeStationRep.deleteAll()
 

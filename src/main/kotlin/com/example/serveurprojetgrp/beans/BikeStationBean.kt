@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "bike_station")
-data class BikeStationEntity(
+data class BikeStationBean(
 
     var name: String = "",
     var address: String = "",
@@ -36,7 +36,7 @@ data class BikeStationEntity(
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
-        other as BikeStationEntity
+        other as BikeStationBean
 
         return id != null && id == other.id
     }
