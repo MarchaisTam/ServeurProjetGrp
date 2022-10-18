@@ -9,8 +9,8 @@ class ScheduledTasksComponent(val bikeStationService: BikeStationService) {
 
     @Scheduled(fixedRate = 60000)
     fun updateDatabase() {
-        bikeStationService.deleteAll()
-        bikeStationService.saveAll()
+        bikeStationService.deleteAllInDB()
+        bikeStationService.saveAllFromExtAPI()
         println("update db")
     }
 }

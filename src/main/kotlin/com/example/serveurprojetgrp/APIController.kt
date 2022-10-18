@@ -8,25 +8,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class APIController(val bikeStationService: BikeStationService) {
 
-    //http://localhost:8080/filter
-    @GetMapping("/filter")
-    fun filter(): List<BikeStationBean> {
-        println("/filter")
-        return bikeStationService.getAll()
-    }
-
-    //http://localhost:8080/save
-    @GetMapping("/save")
-    fun save() {
-        println("/save")
-        bikeStationService.saveAll()
-    }
-
-    //http://localhost:8080/delete
-    @GetMapping("/delete")
-    fun delete() {
-        println("/delete")
-        bikeStationService.deleteAll()
+    //http://2.4.228.11:8080/bike-stations
+    @GetMapping("/bike-stations")
+    fun getAllBikeStations(): List<BikeStationBean> {
+        println("/bike-stations")
+        return bikeStationService.findAllInDB()
     }
 
 }

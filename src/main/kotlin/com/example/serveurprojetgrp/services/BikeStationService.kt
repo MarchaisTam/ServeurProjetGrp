@@ -7,10 +7,8 @@ import org.springframework.stereotype.Service
 @Service
 class BikeStationService(val bikeStationRep: BikeStationRepository) {
 
-    fun getAll() = bikeStationRep.findAll()
-
-    fun saveAll() = bikeStationRep.saveAll(RequestUtils.loadBikeStations())
-
-    fun deleteAll() = bikeStationRep.deleteAll()
+    fun findAllInDB() = bikeStationRep.findAll()
+    fun saveAllFromExtAPI() = bikeStationRep.saveAll(RequestUtils.loadBikeStations())
+    fun deleteAllInDB() = bikeStationRep.deleteAll()
 
 }
